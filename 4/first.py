@@ -2,10 +2,6 @@
 file1 = open('_input.txt', 'r')
 Lines = file1.readlines()
 
-red = 12
-green = 13
-blue = 14
-
 sum = 0
 for line in Lines:
     pow = 0
