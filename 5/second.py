@@ -46,7 +46,7 @@ for line in Lines:
                             local.append(newEndLocation)
                             newLocations.append(local)
                             i[0] = -1
-                            i[1] = 0
+                            i[1] = -1
                             continue
                         else:
                             # print ("1.2") # right overflow
@@ -61,9 +61,9 @@ for line in Lines:
                     if i[1] in range(directions[1], directions[1]+directions[2]):
                         # print ("2",i)
                         if True:
-                            # print ("2.1") #left overflow
+                        # print ("2.1") #left overflow
                             newStartLocation = directions[0]
-                            newEndLocation = directions[0] + directions[1]+directions[2] - i[1]
+                            newEndLocation = directions[0] + i[1] - directions[1]
                             local = []
                             local.append(newStartLocation)
                             local.append(newEndLocation)
@@ -74,7 +74,7 @@ for line in Lines:
                         # print ("3",i)
                         if directions[1]+directions[2] < i[1]: 
                             # print ("3.1") # kompletni
-                            newStartLocation = directions[0] + i[0] - directions[1]
+                            newStartLocation = directions[0]
                             newEndLocation = directions[0] + directions[2]
                             local = []
                             local.append(newStartLocation)
@@ -93,7 +93,7 @@ for line in Lines:
                             locations.append(rOverflow)
 
                             i[0] = -1
-                            i[1] = 0
+                            i[1] = -1
                             continue
                         else:
                             print ("3.2") # right overflow
